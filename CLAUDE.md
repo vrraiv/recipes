@@ -58,8 +58,12 @@ flipping `verified` to true.
 
 ## House style for recipe markdown
 
-- Body sections in order: intro paragraph, `## Ingredients`, `## Method`,
-  `## Notes`.
+- Body sections in order: intro, `## Ingredients`, `## Method`, `## Notes`.
+- The `summary` frontmatter field and the intro are both short, plain-English
+  descriptive sentence fragments — what the dish is, nothing more. No cute
+  paragraph, no explanation of the recipe's distinguishing features or the
+  reasoning behind it. Anything worth saying about technique or trade-offs
+  belongs in `## Notes`.
 - Ingredients as an unordered list, quantity first, prep state after the comma
   (`150 g unsalted butter, cubed and softened`).
 - Method as an ordered list. Lead each step with a bolded imperative phrase.

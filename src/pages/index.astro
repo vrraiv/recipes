@@ -8,10 +8,7 @@ const recipes = (await getCollection('recipes', ({ data }) => !data.draft)).sort
 ---
 
 <Base title="The Recipe Box">
-  <p class="lede">
-    The things we actually cook, written down so nobody has to search for them
-    again at 6pm on a Tuesday.
-  </p>
+  <p class="lede">A collection of our recipes for easy reference.</p>
 
   <ul class="index-list">
     {
