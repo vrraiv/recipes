@@ -1,6 +1,6 @@
 ---
 title: Rich Riced New Potato Mash
-summary: A dense, butter-heavy mash built for waxy new potatoes. Smooth enough to eat with a sore jaw.
+summary: A dense, buttery mash of waxy new potatoes.
 servings: 4
 prepMinutes: 15
 cookMinutes: 20

@@ -1,6 +1,6 @@
 ---
 title: Buttermilk Vanilla Waffles
-summary: Steam-leavened waffles with only a trace of chemical leavening, so they come out light and crisp rather than cakey.
+summary: Crisp, steam-leavened buttermilk waffles.
 servings: 2
 yield: 2–3 waffles
 prepMinutes: 5
