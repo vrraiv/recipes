@@ -67,11 +67,6 @@ body {
   text-decoration: none;
 }
 
-.masthead span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
 /* ---- Index ---- */
 
 .lede {

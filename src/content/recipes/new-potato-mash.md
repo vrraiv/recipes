@@ -10,11 +10,7 @@ source:
 updated: 2026-09-13
 ---
 
-Ontario new potatoes are waxy and low in starch, so this will never be a
-fluffy Russet mash — expect something denser, closer to a purée. That is the
-better texture here anyway. The trade-off is that waxy potatoes turn gluey the
-moment you overwork them, so everything below is arranged around ricing and
-folding rather than beating.
+A dense, buttery purée of waxy new potatoes.
 
 ## Ingredients
 
