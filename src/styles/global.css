@@ -1,0 +1,305 @@
+/* Design intent: this gets read on a phone propped against a mixing bowl,
+   with wet hands and bad kitchen lighting. Large body type, generous line
+   height, strong contrast, minimal chrome. Nothing that needs a hover. */
+
+:root {
+  --paper: #f5f7f5;
+  --surface: #ffffff;
+  --ink: #171a18;
+  --muted: #5f6a63;
+  --rule: #d6ddd8;
+  --accent: #1f5e43;
+  --flag: #8a5a12;
+  --flag-bg: #fdf6e7;
+
+  --serif: Charter, "Bitstream Charter", "Iowan Old Style", Georgia,
+    "Times New Roman", serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --measure: 34rem;
+  --step: clamp(1.05rem, 0.98rem + 0.3vw, 1.15rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--step);
+  line-height: 1.6;
+}
+
+.shell {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
+
+/* ---- Masthead ---- */
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 2.5rem;
+}
+
+.masthead a {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.masthead span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---- Index ---- */
+
+.lede {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1.45;
+  max-width: var(--measure);
+  margin: 0 0 2.5rem;
+}
+
+.index-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.index-list li {
+  border-top: 1px solid var(--rule);
+}
+
+.index-list li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.index-list a {
+  display: block;
+  padding: 1.25rem 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.index-list h2 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.index-list a:hover h2,
+.index-list a:focus-visible h2 {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.index-list p {
+  margin: 0;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+.meta {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.meta b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---- Recipe page ---- */
+
+.recipe-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 1.5rem + 2.2vw, 2.9rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.75rem;
+  max-width: 20ch;
+}
+
+.recipe-summary {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: var(--measure);
+  margin: 0 0 1.25rem;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.stats div b {
+  display: block;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.prose p {
+  margin: 0 0 1rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.35rem;
+}
+
+.prose li {
+  margin-bottom: 0.6rem;
+}
+
+/* Ingredient lists get roomy, tappable rows — you scan these mid-task. */
+.prose h2 + ul li {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted var(--rule);
+  list-style: none;
+  margin-left: -1.35rem;
+}
+
+.prose ol li {
+  padding-left: 0.2rem;
+}
+
+.prose ol li::marker {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.prose code {
+  background: var(--flag-bg);
+  color: var(--flag);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.1rem;
+  background: var(--flag-bg);
+  border-left: 3px solid var(--flag);
+  color: var(--flag);
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0 1.5rem;
+}
+
+.prose a {
+  color: var(--accent);
+  text-underline-offset: 2px;
+}
+
+/* ---- Attribution ---- */
+
+.attribution {
+  max-width: var(--measure);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.attribution a {
+  color: var(--accent);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.5rem;
+  vertical-align: 0.15em;
+}
+
+/* ---- Accessibility floor ---- */
+
+a:focus-visible,
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+  .masthead,
+  .back {
+    display: none;
+  }
+}

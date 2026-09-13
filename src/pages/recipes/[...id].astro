@@ -1,0 +1,73 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({
+    params: { id: recipe.id },
+    props: { recipe },
+  }));
+}
+
+const { recipe } = Astro.props;
+const { Content } = await render(recipe);
+const d = recipe.data;
+---
+
+<Base title={d.title} description={d.summary}>
+  <h1 class="recipe-title">{d.title}</h1>
+  <p class="recipe-summary">{d.summary}</p>
+
+  <div class="stats">
+    {d.servings && (
+      <div>
+        <b>{d.servings}</b>
+        servings
+      </div>
+    )}
+    {d.yield && (
+      <div>
+        <b>{d.yield}</b>
+        yield
+      </div>
+    )}
+    {d.prepMinutes && (
+      <div>
+        <b>{d.prepMinutes} min</b>
+        prep
+      </div>
+    )}
+    {d.cookMinutes && (
+      <div>
+        <b>{d.cookMinutes} min</b>
+        cook
+      </div>
+    )}
+  </div>
+
+  <article class="prose">
+    <Content />
+  </article>
+
+  {
+    d.source.origin !== 'own' && (
+      <footer class="attribution">
+        <p>
+          {d.source.origin === 'adapted' ? 'Adapted from' : 'Based on'}{' '}
+          {d.source.url ? (
+            <a href={d.source.url} rel="noopener nofollow">
+              {d.source.publisher ?? d.source.url}
+            </a>
+          ) : (
+            d.source.publisher
+          )}
+          {d.source.author && <> by {d.source.author}</>}. Quantities and method
+          are summarised for our own kitchen use; the original write-up belongs
+          to its publisher.
+        </p>
+        {d.source.note && <p>{d.source.note}</p>}
+      </footer>
+    )
+  }
+</Base>

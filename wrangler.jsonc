@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "recipes",
+  "compatibility_date": "2026-09-01",
+
+  // Assets-only Worker: no server code, Cloudflare serves ./dist directly.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+
+  // Replace with your zone. Requires the zone to be active in this account.
+  "routes": [
+    {
+      "pattern": "recipes.example.com",
+      "custom_domain": true
+    }
+  ]
+}

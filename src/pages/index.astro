@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const recipes = (await getCollection('recipes', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.title.localeCompare(b.data.title)
+);
+---
+
+<Base title="The Recipe Box">
+  <p class="lede">
+    The things we actually cook, written down so nobody has to search for them
+    again at 6pm on a Tuesday.
+  </p>
+
+  <ul class="index-list">
+    {
+      recipes.map((recipe) => {
+        const { title, summary, servings, source, verified } = recipe.data;
+        const total =
+          (recipe.data.prepMinutes ?? 0) + (recipe.data.cookMinutes ?? 0);
+        return (
+          <li>
+            <a href={`/recipes/${recipe.id}/`}>
+              <h2>
+                {title}
+                {!verified && <span class="badge">unverified</span>}
+              </h2>
+              <p>{summary}</p>
+              <p class="meta">
+                {servings && <>Serves {servings}</>}
+                {servings && total > 0 && ' \u00b7 '}
+                {total > 0 && <>{total} min</>}
+                {source.origin !== 'own' && source.publisher && (
+                  <> {'\u00b7'} via {source.publisher}</>
+                )}
+              </p>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Base>
