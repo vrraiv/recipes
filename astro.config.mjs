@@ -2,8 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  // Change this to your subdomain before the first deploy.
-  site: 'https://recipes.example.com',
+  site: 'https://recipes.vikramrai.com',
   output: 'static',
   build: {
     // Emits /recipes/foo/index.html so Workers static assets serve clean URLs.

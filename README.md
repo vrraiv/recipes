@@ -6,20 +6,18 @@ subdomain via Cloudflare Workers static assets.
 Two recipes are seeded: one written from scratch, one adapted from an outside
 source to demonstrate the attribution pattern.
 
-## Status: not yet built
+## Status: building on Astro 7
 
-This scaffold was written but never compiled — `npm install` could not complete
-in the environment where it was generated. Run `npm install && npm run build`
-first and fix anything that surfaces before assuming it works. The most likely
-sticking points are the Astro 5 content-collection API (`src/content.config.ts`,
-the `glob` loader, and `render()` imported from `astro:content`) and the
-assets-only Wrangler config, both of which changed relatively recently.
+The site is compiled and building clean on Astro 7 (static output) with
+Wrangler 4 for the assets-only deploy. Requires Node 22.12+.
 
 ## Getting started
 
 ```bash
 npm install
 npm run dev          # http://localhost:4321
+npm run build        # static output to dist/
+npm run check        # type-check + content-schema diagnostics
 ```
 
 ## Project layout
@@ -78,11 +76,9 @@ roomy, scannable ingredient treatment, and ordered lists get numbered markers.
 
 ## Deploying to Cloudflare
 
-1. Edit `wrangler.jsonc`: set `name` and change the route pattern from
-   `recipes.example.com` to your subdomain. The zone must already be active in
-   the same Cloudflare account.
-2. Edit `astro.config.mjs`: set `site` to the same URL.
-3. Authenticate and ship:
+The domain is set to `recipes.vikramrai.com` in both `wrangler.jsonc` (the
+custom-domain route) and `astro.config.mjs` (`site`). The zone must be active in
+the same Cloudflare account before the first deploy. Then authenticate and ship:
 
 ```bash
 npx wrangler login

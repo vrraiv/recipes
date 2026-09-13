@@ -9,10 +9,10 @@
     "not_found_handling": "404-page"
   },
 
-  // Replace with your zone. Requires the zone to be active in this account.
+  // The zone must be active in this Cloudflare account.
   "routes": [
     {
-      "pattern": "recipes.example.com",
+      "pattern": "recipes.vikramrai.com",
       "custom_domain": true
     }
   ]

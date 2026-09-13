@@ -1,22 +1,25 @@
 # Working in this repo
 
-A private family recipe site. Astro 5, static output, deployed to Cloudflare
+A private family recipe site. Astro 7, static output, deployed to Cloudflare
 Workers static assets. No framework integrations, no CSS framework, no client
 JavaScript — keep it that way unless there's a concrete reason not to.
 
-## First task
+## Build
 
-The scaffold has never been compiled. Before any feature work:
+The scaffold is compiled and building clean on Astro 7. Setup is just:
 
 ```bash
 npm install && npm run build
 ```
 
-Fix what breaks. Expect friction around the Astro 5 content-collections API
-(`src/content.config.ts`, the `glob` loader, `render()` from `astro:content`,
-and `entry.id` rather than the older `entry.slug`) and around the assets-only
-Wrangler config, which needs Wrangler 4. Check the current Astro and Wrangler
-docs rather than assuming the version conventions in this scaffold are right.
+Requires Node 22.12+ (Astro 7's floor) and Wrangler 4 for the assets-only
+config. Notes on the content-collections API (`src/content.config.ts`): it uses
+the `glob` loader, `render()` from `astro:content`, and `entry.id` (not the
+older `entry.slug`). Zod comes from `astro/zod`, not re-exported from
+`astro:content` — that re-export is deprecated as of Astro 7 and goes away in
+Astro 8. The schema is on zod v4, so use the top-level string formats
+(`z.url()`), not the deprecated chained methods (`z.string().url()`). When
+bumping Astro or Wrangler, check the current docs rather than assuming.
 
 ## What matters here
 

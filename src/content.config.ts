@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const recipes = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/recipes' }),
@@ -19,7 +20,7 @@ const recipes = defineCollection({
         origin: z.enum(['own', 'adapted', 'reference']),
         publisher: z.string().optional(),
         author: z.string().optional(),
-        url: z.string().url().optional(),
+        url: z.url().optional(),
         note: z.string().optional(),
       })
       .default({ origin: 'own' }),
