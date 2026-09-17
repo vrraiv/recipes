@@ -1,6 +1,7 @@
 ---
 title: Kabocha Squash Soup
 summary: A silky puréed soup of kabocha squash, onion, and cream.
+servings: 4
 cookMinutes: 20
 tags: [soup, squash, vegetarian]
 source:
