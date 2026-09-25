@@ -10,10 +10,10 @@ source:
   url: https://www.cbc.ca/life/thegoods/oh-she-glows-soul-soothing-african-peanut-stew-1.5030770
   note: >-
     From The Oh She Glows Cookbook (p. 129), excerpted at CBC Life. Condensed
-    to quantities and method for kitchen use. Quantities transcribed from a
-    third-party copy and not yet checked against the book.
-verified: false
-updated: 2026-09-24
+    to quantities and method for kitchen use. Quantities checked against the
+    book.
+verified: true
+updated: 2026-09-25
 ---
 
 A vegan stew of sweet potato, chickpeas, and greens in a peanut and tomato
