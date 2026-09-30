@@ -36,6 +36,7 @@ Whole wheat apple muffins, sweetened with banana and maple syrup.
 - 1 large egg, lightly beaten
 - 235 ml buttermilk (1 cup), or 230 g yogurt
 - 2 large apples, cored and coarsely chopped, unpeeled
+- Turbinado sugar, for topping
 
 ## Method
 
@@ -47,7 +48,8 @@ Whole wheat apple muffins, sweetened with banana and maple syrup.
 4. **Add the egg** and mix well, scraping down the bowl once.
 5. **Stir in the buttermilk gently.** Overmixing at this point curdles it.
 6. **Add the dry ingredients**, stir until combined, and fold in the apple.
-7. **Fill the muffin cups** evenly.
+7. **Fill the muffin cups** evenly and sprinkle the tops with turbinado sugar
+   as desired.
 8. **Bake 10 minutes**, then lower the oven to 200°C (400°F) and bake another
    5–10 minutes, until a toothpick in the centre comes out clean.
 9. **Cool** 5 minutes in the tin, then turn out onto a rack to cool
@@ -56,10 +58,12 @@ Whole wheat apple muffins, sweetened with banana and maple syrup.
 ## Notes
 
 The original uses 95 g packed dark brown sugar, half creamed into the batter
-and half sprinkled over the tops before baking, and 100 g granulated sugar.
-The banana replaces all of the brown sugar, so there's no sugared top. To bring
-the crunchy top back, sprinkle a few tablespoons of brown or demerara sugar over
-the filled cups.
+and half sprinkled over the tops, and 100 g granulated sugar. The banana
+replaces all of the brown sugar, and turbinado sugar takes over the topping.
+
+The batter can be made in a batch and frozen. To bake from frozen, portion it
+into the muffin tin with an ice cream scoop and add 5–7 minutes to the baking
+time.
 
 The original peels the apples. Leaving the peel on works fine if the pieces are
 chopped small.
