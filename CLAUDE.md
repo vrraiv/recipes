@@ -73,5 +73,9 @@ flipping `verified` to true.
 
 ## Deploying
 
-`npm run deploy` runs the build and ships it. Don't deploy without building
-locally first — there's no CI.
+Cloudflare builds and deploys automatically on every push to `main`. Other
+branches are not deployed. There's no CI beyond that build, so a schema or build
+error surfaces as a failed deploy — run `npm run build` locally before merging.
+
+`npm run deploy` still builds and ships by hand if a manual deploy is ever
+needed.
